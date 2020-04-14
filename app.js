@@ -29,14 +29,6 @@ app.get('/', (req, res) => {
 	});
 });
 
-app.get('/about', (req, res) => {
-	res.render('about', { StartingContent: aboutContent });
-});
-
-app.get('/contact', (req, res) => {
-	res.render('contact', { StartingContent: contactContent });
-});
-
 app.get('/compose', (req, res) => {
 	res.render('compose');
 });
