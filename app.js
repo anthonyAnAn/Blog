@@ -22,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
+	res.sendFile(__dirname + '/home.ejs');
 	res.render('home', {
 		StartingContent: homeStartingContent,
 		posts: posts
@@ -64,6 +65,6 @@ app.post('/compose', (req, res) => {
 	res.redirect('/');
 });
 
-app.listen(3000, function() {
-	console.log('Server started on port 3000');
+app.listen(process.env.PORT || 3000, () => {
+	console.log('Server is running');
 });
